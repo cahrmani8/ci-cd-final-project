@@ -18,7 +18,7 @@ spec:
         runAsNonRoot: false
         runAsUser: 0
       script: |
-        
+          #!/usr/bin/python3
           #!/usr/bin/env sh
           set -eu
             echo "Removing all files from ${WORKSPACE_SOURCE_PATH} ..."
@@ -54,6 +54,7 @@ spec:
       image: python:3.9-slim
       workingDir: $(workspaces.source.path)
       script: |
+          #!/usr/bin/python3
           #!/bin/bash
           set -e
           python -m pip install --upgrade pip wheel
